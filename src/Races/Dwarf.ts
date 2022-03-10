@@ -1,7 +1,7 @@
 import Race from './Race';
 
 export default class Dwarf extends Race {
-  private _maxLifePoints: number;
+  public _maxLifePoints: number;
   static _createdRacesInstances = 0; // metodo criado no race 
 
   constructor(name: string, dexterity: number) {
@@ -11,15 +11,10 @@ export default class Dwarf extends Race {
   }
 
   get maxLifePoints(): number {
-    return this.maxLifePoints;
+    return this._maxLifePoints;
   }
 
   static createdRacesInstances(): number {
     return Dwarf._createdRacesInstances;
   }
 }
-
-const bruenor = new Dwarf('Bruenor', 10);
-console.log(bruenor.name);
-console.log(bruenor.dexterity);
-console.log(bruenor.maxLifePoints);

@@ -1,7 +1,7 @@
 import Race from './Race';
 
 export default class Orc extends Race {
-  private _maxLifePoints: number;
+  public _maxLifePoints: number;
   static _createdRacesInstances = 0; // metodo criado no race 
 
   constructor(name: string, dexterity: number) {
@@ -11,14 +11,10 @@ export default class Orc extends Race {
   }
 
   get maxLifePoints(): number {
-    return this.maxLifePoints;
+    return this._maxLifePoints;
   }
 
   static createdRacesInstances(): number {
     return Orc._createdRacesInstances;
   }
 }
-
-const silverAxe = new Orc('Silver Axe', 10);
-console.log(silverAxe.name);
-console.log(silverAxe.dexterity);
