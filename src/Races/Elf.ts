@@ -1,13 +1,13 @@
 import Race from './Race';
 
-export default class Dwarf extends Race {
+export default class Elf extends Race {
   private _maxLifePoints: number;
   static _createdRacesInstances = 0; // metodo criado no race 
 
   constructor(name: string, dexterity: number) {
     super(name, dexterity); // super() chama o construtor da classe pai
     this._maxLifePoints = 99;
-    Dwarf._createdRacesInstances += 1; // incrementa o numero de instancias criadas da classe Dwarf
+    Elf._createdRacesInstances += 1; // incrementa o numero de instancias criadas da classe Elf
   }
 
   get maxLifePoints(): number {
@@ -15,6 +15,10 @@ export default class Dwarf extends Race {
   }
 
   static createdRacesInstances(): number {
-    return Dwarf._createdRacesInstances;
+    return Elf._createdRacesInstances;
   }
 }
+
+const pelegolas = new Elf('Pelegolas', 10);
+console.log(pelegolas.name);
+console.log(pelegolas.dexterity);
