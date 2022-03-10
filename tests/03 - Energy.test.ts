@@ -1,4 +1,4 @@
-describe.skip('03 - Energy', () => {
+describe('03 - Energy', () => {
   it('É possível criar uma variável com o tipo EnergyType e atribuir a ela o valor "mana"', () => {
     expect('Energy.mana').toCompile();
   });
