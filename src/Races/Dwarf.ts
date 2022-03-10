@@ -18,3 +18,8 @@ export default class Dwarf extends Race {
     return Dwarf._createdRacesInstances;
   }
 }
+
+const bruenor = new Dwarf('Bruenor', 10);
+console.log(bruenor.name);
+console.log(bruenor.dexterity);
+console.log(bruenor.maxLifePoints);
