@@ -1,3 +1,5 @@
+import { EnergyType } from '../Energy';
+
 export default abstract class Archetype {
   private _name: string;
   private _special: number;
@@ -24,4 +26,6 @@ export default abstract class Archetype {
   static createdArchetypeInstances(): number {
     throw new Error('Not implemented');
   }
+
+  abstract get energyType(): EnergyType; // esse método é utilizado no character.ts
 }
