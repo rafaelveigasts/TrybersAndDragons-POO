@@ -16,7 +16,7 @@ export default class Character implements Fighter {
 
   constructor(
     name: string,
-    race: Race = new Elf('legolas', 10),
+    race: Race = new Elf(name, 10),
     archetype: Archetype = new Mage(name),
   ) {
     this._race = race;
@@ -28,11 +28,11 @@ export default class Character implements Fighter {
     this._dexterity = race.dexterity;
     this._energy = {
       type_: archetype.energyType,
-      amount: archetype.cost,
+      amount: getRandomInt(1, 10),
     };
   }
 
-  ce(): Race {
+  get race(): Race {
     return this._race;
   }
 
@@ -80,13 +80,14 @@ export default class Character implements Fighter {
   }
 
   levelUp() {
-    if (this._maxLifePoints > this._race.maxLifePoints) {
-      return this._race.maxLifePoints;
-    } 
-    this._lifePoints += getRandomInt(1, 10);
     this._strength += getRandomInt(1, 10);
     this._dexterity += getRandomInt(1, 10);
     this._defense += getRandomInt(1, 10);
+    this._energy.amount = 10;
+    if (this._maxLifePoints > this._race.maxLifePoints) {
+      return this._race.maxLifePoints;
+    }
+    this._lifePoints += getRandomInt(1, 10);
   }
 
   special(enemy: Fighter): void {
