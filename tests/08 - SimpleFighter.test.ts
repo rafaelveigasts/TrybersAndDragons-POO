@@ -1,4 +1,4 @@
-describe.skip('08 - Interface SimpleFighter', () => {
+describe('08 - Interface SimpleFighter', () => {
   it('A interface SimpleFighter existe', () => {
     expect('SimpleFighter.exists').toCompile();
   });
